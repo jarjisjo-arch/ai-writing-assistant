@@ -1,0 +1,71 @@
+{
+  "name": "ai-writing-assistant",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron:dev": "concurrently \"npm run dev\" \"wait-on http://localhost:5173 && cross-env NODE_ENV=development electron .\"",
+    "electron:build": "npm run build && electron-builder"
+  },
+  "build": {
+    "appId": "com.aiwritingassistant.app",
+    "productName": "AI Writing Assistant",
+    "files": [
+      "dist/**/*",
+      "electron/**/*"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@tiptap/extension-character-count": "^3.24.0",
+    "@tiptap/extension-color": "^3.24.0",
+    "@tiptap/extension-font-family": "^3.24.0",
+    "@tiptap/extension-highlight": "^3.24.0",
+    "@tiptap/extension-text-align": "^3.24.0",
+    "@tiptap/extension-text-style": "^3.24.0",
+    "@tiptap/extension-underline": "^3.24.0",
+    "@tiptap/pm": "^3.24.0",
+    "@tiptap/react": "^3.24.0",
+    "@tiptap/starter-kit": "^3.24.0",
+    "docx": "^9.7.1",
+    "file-saver": "^2.0.5",
+    "jspdf": "^4.2.1",
+    "react": "^19.2.6",
+    "react-dom": "^19.2.6"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@tailwindcss/vite": "^4.3.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "autoprefixer": "^10.5.0",
+    "concurrently": "^10.0.0",
+    "cross-env": "^7.0.3",
+    "electron": "^42.3.0",
+    "electron-builder": "^26.8.1",
+    "eslint": "^10.3.0",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "globals": "^17.6.0",
+    "tailwindcss": "^4.3.0",
+    "vite": "^8.0.12",
+    "wait-on": "^8.0.5"
+  }
+}

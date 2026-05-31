@@ -1,0 +1,31 @@
+@import "tailwindcss";
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body { font-family: 'Segoe UI', system-ui, sans-serif; }
+
+/* TipTap editor styles */
+.tiptap-editor {
+  outline: none;
+  min-height: 100%;
+  padding: 48px 64px;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+.tiptap-editor p { margin-bottom: 1em; }
+.tiptap-editor h1 { font-size: 2em; font-weight: bold; margin-bottom: 0.5em; }
+.tiptap-editor h2 { font-size: 1.5em; font-weight: bold; margin-bottom: 0.5em; }
+.tiptap-editor h3 { font-size: 1.2em; font-weight: bold; margin-bottom: 0.5em; }
+.tiptap-editor ul, .tiptap-editor ol { padding-left: 1.5em; margin-bottom: 1em; }
+.tiptap-editor blockquote { border-left: 3px solid #888; padding-left: 1em; color: #666; }
+
+/* RTL support */
+.rtl .tiptap-editor { direction: rtl; text-align: right; }
+.rtl .tiptap-editor blockquote { border-left: none; border-right: 3px solid #888; padding-left: 0; padding-right: 1em; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #ccc; border-radius: 3px; }
+.dark ::-webkit-scrollbar-thumb { background: #444; }
